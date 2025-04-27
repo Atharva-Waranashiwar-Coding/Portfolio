@@ -8,7 +8,7 @@ function Home() {
     <div className="flex flex-col bg-[#100001] text-white min-h-screen">
 
       {/* Hero Section */}
-      <section className="flex flex-col md:flex-row items-center justify-center px-8 pt-20 pb-12 space-y-12 md:space-y-0 md:space-x-20 animate-fade-in">
+      <section className="flex flex-col md:flex-row items-center justify-center px-8 pt-20 pb-10 space-y-10 md:space-y-0 md:space-x-20 animate-fade-in">
         
         {/* Left - Profile Image */}
         <div className="flex-shrink-0">
@@ -41,7 +41,7 @@ function Home() {
       </section>
 
       {/* Quick Stats Section */}
-      <section className="bg-gradient-to-b from-[#100001] to-[#1a1a1a] py-12 px-8 text-center animate-fade-in">
+      <section className="bg-gradient-to-b from-[#100001] to-[#1a1a1a] py-10 px-8 text-center animate-fade-in">
         <h3 className="text-3xl font-bold mb-8">Quick Highlights</h3>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-6 text-lg font-semibold">
           <div>
@@ -76,7 +76,7 @@ function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-[#1a1a1a] py-16 text-center animate-fade-in">
+      <section className="py-16 text-center animate-fade-in">
         <h3 className="text-3xl font-bold mb-6">Let's Build Something Great Together 🚀</h3>
         <button
           onClick={() => setIsModalOpen(true)}
@@ -88,8 +88,8 @@ function Home() {
 
       {/* Contact Modal */}
       {isModalOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50">
-          <div className="bg-[#ca0000] text-white p-8 rounded-lg w-11/12 max-w-md text-center relative animate-fade-in">
+        <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 animate-slide-down">
+          <div className="bg-[#ca0000] text-white p-8 rounded-lg w-11/12 max-w-md text-center relative ">
 
             {/* Close Button */}
             <button
