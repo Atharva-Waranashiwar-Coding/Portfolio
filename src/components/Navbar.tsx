@@ -21,7 +21,7 @@ function Navbar() {
         <div className="flex items-center bg-[#100001] h-full clip-diagonal-right border-r-2 border-[#CA0000] px-4 sm:px-6 w-[65%] sm:w-1/3 min-w-[180px]">
           <Link
             to="/"
-            className="text-white text-lg sm:text-2xl font-bold tracking-wide whitespace-nowrap font-display"
+            className="text-white text-lg sm:text-2xl font-bold tracking-wide  font-display"
           >
             Atharva Waranashiwar
           </Link>
