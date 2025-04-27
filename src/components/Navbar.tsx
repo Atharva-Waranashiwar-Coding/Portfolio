@@ -2,8 +2,7 @@ import { Link, useLocation } from 'react-router-dom';
 
 const navItems = [
   { name: "Home", path: "/" },
-  { name: "Academics", path: "/education" },
-  { name: "Experience", path: "/work" },
+  { name: "My Journey", path: "/myjourney" },
   { name: "Projects", path: "/projects" },
   { name: "Insights", path: "/blog" },
 ];
@@ -16,7 +15,7 @@ function Navbar() {
       <div className="flex h-20 items-center">
 
         {/* Red Section only for the Name */}
-        <div className="flex items-center bg-[#100001] px-6 h-full clip-diagonal-right border-r-2 border-[#CA0000] w-full">
+        <div className="flex items-center bg-[#100001] px-6 h-full clip-diagonal-right border-r-2 border-[#CA0000] w-1/3">
           <Link
             to="/"
             className="text-white text-2xl font-bold tracking-wide whitespace-nowrap font-display"
@@ -31,7 +30,7 @@ function Navbar() {
             <Link
               key={item.name}
               to={item.path}
-              className={`relative text-white font-semibold text-[18px] pb-1 hover:-translate-y-1 hover:text-gray-200 transition-all duration-300 after:block after:content-[''] after:h-[2px] after:bg-white after:transition-all after:duration-300 after:w-0 hover:after:w-full after:mx-auto ${
+              className={`relative text-white font-semibold text-[18px] pb-1 whitespace-nowrap hover:-translate-y-1 hover:text-gray-200 transition-all duration-300 after:block after:content-[''] after:h-[2px] after:bg-white after:transition-all after:duration-300 after:w-0 hover:after:w-full after:mx-auto ${
                 location.pathname === item.path ? 'after:w-full' : ''
               }`}
             >
