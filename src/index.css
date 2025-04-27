@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* src/index.css (or a separate styles file you import) */
+.clip-diagonal-right {
+  clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
+}
