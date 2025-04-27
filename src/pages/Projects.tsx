@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import {projects} from '../components/projectList'
+import {projects} from '../data/projectList'
 
 function Projects() {
   const [searchTerm, setSearchTerm] = useState('');
