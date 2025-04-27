@@ -1,4 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
+import { useState } from 'react';
+import { Menu, X } from 'lucide-react'; // if using lucide-react, or replace with svg
 
 const navItems = [
   { name: "Home", path: "/" },
@@ -9,23 +11,24 @@ const navItems = [
 
 function Navbar() {
   const location = useLocation();
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <nav className="bg-gradient-to-r from-[#b00000] to-[#CA0000] shadow-md">
-      <div className="flex h-20 items-center">
+      <div className="flex h-20 items-center px-6">
 
-        {/* Red Section only for the Name */}
-        <div className="flex items-center bg-[#100001] px-6 h-full clip-diagonal-right border-r-2 border-[#CA0000] w-1/3">
+        {/* Left Section */}
+        <div className="flex items-center bg-[#100001] h-full clip-diagonal-right border-r-2 border-[#CA0000] px-4 sm:px-6 w-[65%] sm:w-1/3 min-w-[180px]">
           <Link
             to="/"
-            className="text-white text-2xl font-bold tracking-wide whitespace-nowrap font-display"
+            className="text-white text-lg sm:text-2xl font-bold tracking-wide whitespace-nowrap font-display"
           >
             Atharva Waranashiwar
           </Link>
         </div>
 
-        {/* Black Background - Navigation Links */}
-        <div className="flex items-center gap-8 ml-auto pr-8 animate-fade-in">
+        {/* Desktop Nav */}
+        <div className="hidden md:flex items-center gap-8 ml-auto pr-8 animate-fade-in">
           {navItems.map((item) => (
             <Link
               key={item.name}
@@ -39,7 +42,34 @@ function Navbar() {
           ))}
         </div>
 
+        {/* Mobile Menu Button */}
+        <div className="md:hidden flex items-center ml-auto pr-4">
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="text-white focus:outline-none"
+          >
+            {menuOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+        </div>
       </div>
+
+      {/* Mobile Menu Dropdown */}
+      {menuOpen && (
+        <div className="flex flex-col items-center bg-[#1a1a1a] md:hidden animate-fade-in">
+          {navItems.map((item) => (
+            <Link
+              key={item.name}
+              to={item.path}
+              onClick={() => setMenuOpen(false)} // close menu after click
+              className={`w-full text-center py-4 text-white font-semibold text-lg border-b border-[#CA0000] ${
+                location.pathname === item.path ? 'bg-[#ca0000]/30' : 'hover:bg-[#ca0000]/20'
+              }`}
+            >
+              {item.name}
+            </Link>
+          ))}
+        </div>
+      )}
     </nav>
   );
 }

@@ -86,28 +86,27 @@ function Home() {
         </button>
       </section>
 
-      {/* Contact Modal */}
       {isModalOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 animate-slide-down">
-          <div className="bg-[#ca0000] text-white p-8 rounded-lg w-11/12 max-w-md text-center relative ">
+        <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 animate-slide-down p-4">
+          <div className="bg-[#ca0000] text-white p-6 sm:p-8 rounded-xl w-full max-w-md text-center relative">
 
             {/* Close Button */}
             <button
               onClick={() => setIsModalOpen(false)}
-              className="absolute top-3 right-3 text-gray-400 hover:text-white text-2xl"
+              className="absolute top-4 right-4 text-gray-300 hover:text-white text-2xl"
             >
               ×
             </button>
 
             {/* Modal Content */}
-            <h3 className="text-2xl font-bold mb-6">Get In Touch</h3>
-            <p className="text-gray-300 mb-4">You can reach me at:</p>
+            <h3 className="text-2xl sm:text-3xl font-bold mb-6">Get In Touch</h3>
+            <p className="text-gray-200 mb-4 text-sm sm:text-base">You can reach me at:</p>
 
             <div className="space-y-4">
-              <p className="text-lg">
-                📧 <a href="mailto:waranashiwaratharva@gmail.com" className="hover:underline">Email: waranashiwaratharva@gmail.com</a>
+              <p className="text-base sm:text-lg">
+                📧 <a href="mailto:waranashiwaratharva@gmail.com" className="hover:underline break-all">Email: waranashiwaratharva@gmail.com</a>
               </p>
-              <p className="text-lg">
+              <p className="text-base sm:text-lg">
                 💼 <a href="https://www.linkedin.com/in/atharvawaranashiwar/" target="_blank" rel="noopener noreferrer" className="hover:underline">LinkedIn Profile</a>
               </p>
             </div>
