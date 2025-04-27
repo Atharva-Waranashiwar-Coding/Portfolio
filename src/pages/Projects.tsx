@@ -86,6 +86,9 @@ function Projects() {
                 <span className="text-gray-400 text-xs">{project.date}</span>
               </div>
 
+              {/* Relevance*/}
+              <p className="text-gray-400 text-sm mb-2">{project.relevance}</p>
+              
               {/* Brief */}
               <p className="text-gray-400 text-sm">{project.brief}</p>
             </div>
