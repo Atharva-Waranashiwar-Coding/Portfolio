@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import SkillSection from '../components/SkillSection';
 
 function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -30,12 +31,21 @@ function Home() {
           <p className="text-gray-400 max-w-md">
             Crafting impactful web solutions and scalable backend systems, with a passion for data, AI, and cloud-native technologies. 
           </p>
-          <Link
-            to="/projects"
-            className="inline-block bg-[#CA0000] hover:bg-[#b00000] text-white font-semibold py-2 px-6 rounded-full transition-all duration-300"
-          >
-            Explore My Work
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <Link
+              to="/projects"
+              className="inline-block bg-[#CA0000] hover:bg-[#b00000] text-white font-semibold py-2 px-6 rounded-full transition-all duration-300 text-center"
+            >
+              Explore My Work
+            </Link>
+            <a
+              href="/assets/AAW_resume.pdf"
+              download
+              className="inline-block bg-white hover:bg-gray-100 text-[#CA0000] font-semibold py-2 px-6 rounded-full transition-all duration-300 text-center"
+            >
+              Download Resume
+            </a>
+          </div>
         </div>
 
       </section>
@@ -73,6 +83,11 @@ function Home() {
         <p className="text-gray-500 italic text-center">
           Let's create solutions that truly make a difference.
         </p>
+      </section>
+
+      {/* Skills & Tools Section */}
+      <section className="bg-[#1a1a1a] py-16 px-8 animate-fade-in">
+        <SkillSection></SkillSection>
       </section>
 
       {/* CTA Section */}
