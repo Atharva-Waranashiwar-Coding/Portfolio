@@ -167,4 +167,16 @@ export const projects = [
       github: "",
       live: "https://drive.google.com/file/d/1Bndt_vL1Mk1I0R4dj5p5KLwkA56tTWe6/view?usp=share_link"
     },
+    {
+      id: 15,
+      title: "Personal Portfolio Website",
+      brief: "Showcasing projects, blogs, and career journey.",
+      description: "Designed and developed a fully responsive personal portfolio using React, TailwindCSS, and Vite. Includes sections for showcasing projects, technical blogs, education, work history, and skill sets. Integrated SEO optimization, responsive modals, and dynamic routing. Deployed using Vercel and connected with a custom domain.",
+      stack: ["React", "Vite", "TailwindCSS", "React Router", "Vercel", "Responsive Design", "SEO"],
+      focus: ["Frontend", "UI/UX", "Deployment"],
+      date: "2025",
+      relevance: "Personal Branding Project",
+      github: "https://github.com/Atharva-Waranashiwar-Coding/portfolio",
+      live: "https://atharvawaranashiwar.me"
+    }
   ];
