@@ -1,13 +1,13 @@
 export const blogs = [
-    {
-      id: 1,
-      title: "Building Beyond Academics: My First Industry Co-op Experience",
-      brief: "A deep dive into my first co-op experience at a tech startup.",
-      tags: ["Career", "SoftwareEngineering", "CoopExperience"],
+  {
+      id:3,
+      title: "Halfway Through the Co-op: Building for Impact, Not Just for Code",
+      brief: "Insights on the importance of impact in software development.",
+      tags: ["fullstack", "cloud", "ai", "internship", "co-op"],
       author: "Atharva Waranashiwar",
-      date: "Feb 28, 2025",
-      slug: "blog1",
-      file: "/blogs/blog1.md"
+      date: "May 6, 2025",
+      slug: "blog3",
+      file: "/blogs/blog3.md",
     },
     {
       id: 2,
@@ -19,4 +19,14 @@ export const blogs = [
       slug: "blog2",
       file: "/blogs/blog2.md"
     },
+    {
+      id: 1,
+      title: "Building Beyond Academics: My First Industry Co-op Experience",
+      brief: "A deep dive into my first co-op experience at a tech startup.",
+      tags: ["Career", "SoftwareEngineering", "CoopExperience"],
+      author: "Atharva Waranashiwar",
+      date: "Feb 28, 2025",
+      slug: "blog1",
+      file: "/blogs/blog1.md"
+    }
   ];
