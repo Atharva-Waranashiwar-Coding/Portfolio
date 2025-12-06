@@ -173,10 +173,25 @@ export const projects = [
       brief: "Showcasing projects, blogs, and career journey.",
       description: "Designed and developed a fully responsive personal portfolio using React, TailwindCSS, and Vite. Includes sections for showcasing projects, technical blogs, education, work history, and skill sets. Integrated SEO optimization, responsive modals, and dynamic routing. Deployed using Vercel and connected with a custom domain.",
       stack: ["React", "Vite", "TailwindCSS", "React Router", "Vercel", "Responsive Design", "SEO"],
-      focus: ["Frontend", "UI/UX", "Deployment"],
+      focus: ["Frontend", "Deployment"],
       date: "2025",
       relevance: "Personal Branding Project",
       github: "https://github.com/Atharva-Waranashiwar-Coding/portfolio",
       live: "https://atharvawaranashiwar.me"
+    }
+    ,
+    {
+      id: 16,
+      title: "Career Growth Platform",
+      brief: "Platform to help users plan and track career progression with mentorship and resources.",
+      description: "Built a platform to help students and early-career professionals plan career goals, get mentor-matching, track milestones, and discover curated learning paths. Features user profiles, goal-setting, progress analytics, and community resources.",
+      stack: ["React", "Node.js", "Express", "PostgreSQL", "TailwindCSS", "Firebase Auth"],
+      focus: ["Full Stack", "Frontend", "UX Design"],
+      date: "2025",
+      relevance: "Capstone / Personal Project",
+      github: "",
+      live: "",
+      caseStudy: "career-growth-platform.md",
+      caseStudyRoute: "/case-study/career-growth-platform"
     }
   ];

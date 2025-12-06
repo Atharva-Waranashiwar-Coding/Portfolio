@@ -1,17 +1,26 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import {projects} from '../data/projectList'
 
 function Projects() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedFocus, setSelectedFocus] = useState('All');
   const [selectedStacks, setSelectedStacks] = useState<string[]>([]);
-  const [selectedProject, setSelectedProject] = useState<any>(null);
+  const navigate = useNavigate();
 
-  const focusAreas = ["All", "Full Stack", "AI/ML", "Cloud", "IoT / Embedded"];
+  const focusAreas = ["All","UX Design", "Full Stack", "AI/ML", "Cloud", "IoT / Embedded"];
   
   const stacks = ["React", "Firebase", "GCP", "FastAPI", "Python", "AWS", "MongoDB", "Node.js", "SQLAlchemy"];
 
   const sortedProjects = [...projects].sort((a, b) => parseInt(b.date) - parseInt(a.date));
+
+  const handleProjectClick = (project: any) => {
+    if (project.caseStudyRoute) {
+      navigate(project.caseStudyRoute);
+      return;
+    }
+    navigate(`/projects/${project.id}`);
+  };
 
   const filteredProjects = sortedProjects.filter((project) => {
     const matchesFocus = selectedFocus === "All" || project.focus.includes(selectedFocus);
@@ -77,7 +86,7 @@ function Projects() {
           <div
             key={project.id}
             className="bg-gradient-to-br from-[#1a1a1a] to-[#100001] p-6 rounded-2xl shadow-lg hover:scale-[1.03] hover:shadow-[0_0_15px_#ca0000] transition-all duration-300 cursor-pointer flex flex-col justify-between min-h-[220px]"
-            onClick={() => setSelectedProject(project)}
+            onClick={() => handleProjectClick(project)}
           >
             <div className="mb-4">
               {/* Title + Date */}
@@ -108,53 +117,7 @@ function Projects() {
         ))}
       </div>
 
-      {/* Project Modal */}
-      {selectedProject && (
-        <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
-          <div className="bg-[#1a1a1a] p-8 rounded-lg max-w-lg w-full relative animate-fade-in">
-            {/* Close Button */}
-            <button
-              className="absolute top-4 right-4 text-gray-400 hover:text-white text-2xl"
-              onClick={() => setSelectedProject(null)}
-            >
-              ×
-            </button>
-
-            {/* Modal Content */}
-            <h3 className="text-2xl font-bold mb-4">{selectedProject.title}</h3>
-            <p className="text-gray-400 mb-4">{selectedProject.description}</p>
-            <div className="flex flex-wrap gap-2 mb-4">
-              {selectedProject.stack.map((tech: string, idx: number) => (
-                <span key={idx} className="px-3 py-1 rounded-full bg-gray-700 text-sm">{tech}</span>
-              ))}
-            </div>
-
-            {/* Links */}
-            <div className="flex gap-4">
-              {selectedProject.github && (
-                <a
-                  href={selectedProject.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[#CA0000] hover:underline"
-                >
-                  GitHub
-                </a>
-              )}
-              {selectedProject.live && (
-                <a
-                  href={selectedProject.live}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[#CA0000] hover:underline"
-                >
-                  Live Site
-                </a>
-              )}
-            </div>
-          </div>
-        </div>
-      )}
+      
     </div>
   );
 }

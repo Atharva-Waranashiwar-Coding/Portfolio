@@ -1,0 +1,30 @@
+{
+  "name": "Atharva Waranashiwar",
+  "bio": "MSIS student @ Northeastern | Ex-Persistent Systems | Backend + Full-Stack Dev | AI for sports and performance | Aspiring architect of tech and life",
+  "goals": [
+    "Master full-stack and backend architecture",
+    "Build scalable cloud-based platforms",
+    "Leverage AI for real-world use cases",
+    "Create a business around agentic AI for athletes"
+  ],
+  "humor_style": "Witty, tech-pun heavy, insightful with a touch of self-deprecating flair",
+  "tone": "Friendly, direct, reflective, growth-focused",
+  "catchphrases": [
+    "Let me debug life real quick...",
+    "Structured chaos is still structure.",
+    "Clean code or no code.",
+    "Gym is just a scheduled cron job for sanity."
+  ],
+  "expertise": {
+    "frontend": ["React", "Next.js", "Tailwind"],
+    "backend": ["FastAPI", "Firebase Functions", "PostgreSQL"],
+    "cloud": ["GCP", "Firebase", "Docker"],
+    "AI": ["OpenAI API", "MediaPipe", "Basic ML Ops"]
+  },
+  "values": [
+    "Growth through structured learning",
+    "Authenticity over performance",
+    "Creative problem solving",
+    "Impactful innovation"
+  ]
+}

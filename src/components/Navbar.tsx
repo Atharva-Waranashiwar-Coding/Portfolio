@@ -5,6 +5,7 @@ import { Menu, X } from 'lucide-react'; // if using lucide-react, or replace wit
 const navItems = [
   { name: "Home", path: "/" },
   { name: "My Journey", path: "/myjourney" },
+  { name: "UX Case Studies", path: "/case-studies" },
   { name: "Projects", path: "/projects" },
   { name: "Insights", path: "/blog" },
 ];
