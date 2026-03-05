@@ -203,7 +203,7 @@ export const projects = [
       focus: ["GenAI", "RAG", "Backend", "Quant Finance"],
       date: "2026",
       relevance: "Course Project (CSYE 7380)",
-      github: "",
+      github: "https://github.com/Atharva-Waranashiwar-Coding/George-Soros-chatbot",
       live: "",
     }
   ];
