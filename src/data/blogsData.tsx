@@ -7,7 +7,7 @@ export const blogs = [
       author: "Atharva Waranashiwar",
       date: "Mar 4, 2026",
       slug: "what-im-building-right-now",
-      file: "/blogs/what-im-building-right-now.md"
+      file: "/blogs/blog4.md"
   },
   {
       id:3,
