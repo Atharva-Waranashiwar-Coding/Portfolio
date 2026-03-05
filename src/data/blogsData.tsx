@@ -1,5 +1,15 @@
 export const blogs = [
   {
+      id: 4,
+      title: "What I’m Building Right Now: AI Systems, Full-Stack Platforms, and Applied Research",
+      brief: "An overview of the systems, AI projects, and engineering explorations I’m currently working on as a graduate student and builder.",
+      tags: ["AI", "FullStack", "GenerativeAI", "EngineeringJourney"],
+      author: "Atharva Waranashiwar",
+      date: "Mar 4, 2026",
+      slug: "what-im-building-right-now",
+      file: "/blogs/what-im-building-right-now.md"
+  },
+  {
       id:3,
       title: "Halfway Through the Co-op: Building for Impact, Not Just for Code",
       brief: "Insights on the importance of impact in software development.",
