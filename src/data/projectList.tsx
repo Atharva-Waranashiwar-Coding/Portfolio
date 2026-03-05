@@ -205,7 +205,5 @@ export const projects = [
       relevance: "Course Project (CSYE 7380)",
       github: "",
       live: "",
-      caseStudy: "george-soros-rag-pairs-trading.md",
-      caseStudyRoute: "/case-study/george-soros-rag-pairs-trading"
     }
   ];
