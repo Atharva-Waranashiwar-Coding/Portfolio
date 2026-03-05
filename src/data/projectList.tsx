@@ -193,5 +193,19 @@ export const projects = [
       live: "",
       caseStudy: "career-growth-platform.md",
       caseStudyRoute: "/case-study/career-growth-platform"
+    },
+    {
+      id: 17,
+      title: "George Soros RAG Chatbot + Pairs Trading Lab",
+      brief: "GenAI chatbot grounded with RAG plus a quantitative pairs trading research module for signal generation and backtest-ready outputs.",
+      description: "Built a course project for CSYE 7380 (Theory and Practical Applications of Gen AI) that combines a George Soros focused RAG chatbot with a quantitative finance module. The chatbot retrieves relevant context from a curated corpus using transformer embeddings and vector search, then generates grounded answers with prompt orchestration, memory, and safety controls. The pairs trading module identifies candidate pairs using correlation and cointegration checks, models spread behavior, computes rolling z-scores, and emits long/short trade signals suitable for backtesting and analysis.",
+      stack: ["React", "TypeScript", "Node.js", "Express", "Python", "OpenAI API", "Vector DB", "PostgreSQL"],
+      focus: ["GenAI", "RAG", "Backend", "Quant Finance"],
+      date: "2026",
+      relevance: "Course Project (CSYE 7380)",
+      github: "",
+      live: "",
+      caseStudy: "george-soros-rag-pairs-trading.md",
+      caseStudyRoute: "/case-study/george-soros-rag-pairs-trading"
     }
   ];
