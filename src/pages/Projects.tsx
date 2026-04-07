@@ -1,123 +1,152 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import {projects} from '../data/projectList'
+import { Search } from 'lucide-react';
+import { useDeferredValue, useMemo, useState } from 'react';
+import PageIntro from '../components/PageIntro';
+import ProjectCard from '../components/ProjectCard';
+import Reveal from '../components/Reveal';
+import { projectDisciplines, projects, topProjectKeywords } from '../lib/content';
 
 function Projects() {
   const [searchTerm, setSearchTerm] = useState('');
-  const [selectedFocus, setSelectedFocus] = useState('All');
-  const [selectedStacks, setSelectedStacks] = useState<string[]>([]);
-  const navigate = useNavigate();
+  const [selectedDiscipline, setSelectedDiscipline] = useState('All');
+  const [selectedKeyword, setSelectedKeyword] = useState('All');
+  const deferredSearchTerm = useDeferredValue(searchTerm);
 
-  const focusAreas = ["All","UX Design", "Full Stack", "AI/ML", "Cloud", "IoT / Embedded"];
-  
-  const stacks = ["React", "Firebase", "GCP", "FastAPI", "Python", "AWS", "MongoDB", "Node.js", "SQLAlchemy"];
+  const filteredProjects = useMemo(() => {
+    const normalizedSearch = deferredSearchTerm.trim().toLowerCase();
 
-  const sortedProjects = [...projects].sort((a, b) => parseInt(b.date) - parseInt(a.date));
+    return projects.filter((project) => {
+      const matchesDiscipline = selectedDiscipline === 'All' || project.disciplines.includes(selectedDiscipline);
+      const matchesKeyword = selectedKeyword === 'All' || project.keywords.includes(selectedKeyword);
 
-  const handleProjectClick = (project: any) => {
-    if (project.caseStudyRoute) {
-      navigate(project.caseStudyRoute);
-      return;
-    }
-    navigate(`/projects/${project.id}`);
-  };
+      if (!normalizedSearch) {
+        return matchesDiscipline && matchesKeyword;
+      }
 
-  const filteredProjects = sortedProjects.filter((project) => {
-    const matchesFocus = selectedFocus === "All" || project.focus.includes(selectedFocus);
-    const matchesStacks = selectedStacks.length === 0 || selectedStacks.every((stack) => project.stack.includes(stack));
-    const matchesSearch = project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                          project.brief.toLowerCase().includes(searchTerm.toLowerCase());
-    return matchesFocus && matchesStacks && matchesSearch;
-  });
+      const searchContent = [
+        project.title,
+        project.brief,
+        project.associatedWith,
+        ...project.keywords,
+        ...project.skills,
+        ...project.overview,
+      ]
+        .join(' ')
+        .toLowerCase();
+
+      return matchesDiscipline && matchesKeyword && searchContent.includes(normalizedSearch);
+    });
+  }, [deferredSearchTerm, selectedDiscipline, selectedKeyword]);
 
   return (
-    <div className="bg-[#100001] text-white min-h-screen p-8">
-      <h1 className="text-4xl font-bold mb-10 text-center">Projects</h1>
+    <div className="section-shell py-14 sm:py-16 lg:py-20">
+      <PageIntro
+        eyebrow="Projects"
+        title="A cleaner project workspace with the builds themselves doing the talking."
+        description="Use filters to inspect the portfolio by system type, stack, or focus area. Project windows stay static here unless there is a meaningful link to follow."
+      />
 
-      {/* Search */}
-      <div className="flex justify-center mb-6">
-        <input
-          type="text"
-          placeholder="Search projects..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          className="px-4 py-2 rounded-full text-black w-full max-w-md"
-        />
-      </div>
+      <Reveal delay={90} variant="scale">
+        <div className="workspace-window mt-10">
+          <div className="workspace-bar justify-between">
+            <div className="flex items-center gap-3">
+              <div className="workspace-dots">
+                <span className="workspace-dot" />
+                <span className="workspace-dot" />
+                <span className="workspace-dot" />
+              </div>
+              <span className="workspace-title">project-search.ts</span>
+            </div>
+            <span className="chip bg-white/12 text-white">
+              {filteredProjects.length} / {projects.length} projects
+            </span>
+          </div>
 
-      {/* Filters */}
-      <div className="flex flex-wrap justify-center gap-4 mb-10">
-        {focusAreas.map((focus) => (
-          <button
-            key={focus}
-            onClick={() => setSelectedFocus(focus)}
-            className={`px-4 py-2 rounded-full font-semibold ${
-              selectedFocus === focus ? 'bg-[#CA0000] text-white' : 'bg-gray-700 text-white hover:bg-gray-600'
-            } transition-all`}
-          >
-            {focus}
-          </button>
-        ))}
-      </div>
+          <div className="filter-shell grid gap-6 p-6 sm:p-8 xl:grid-cols-[1.1fr,0.9fr]">
+            <label className="relative z-10 flex flex-col gap-3">
+              <span className="workspace-section-label">search</span>
+              <div className="flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-3 transition-colors duration-300 focus-within:border-white/18 focus-within:bg-white/8">
+                <Search size={18} className="text-white/42" />
+                <input
+                  type="text"
+                  value={searchTerm}
+                  onChange={(event) => setSearchTerm(event.target.value)}
+                  placeholder="search by project, stack, or systems focus"
+                  className="w-full bg-transparent text-sm text-white outline-none placeholder:text-white/35"
+                />
+              </div>
+            </label>
 
-      <div className="flex flex-wrap justify-center gap-2 mb-12">
-        {stacks.map((stack) => (
-          <button
-            key={stack}
-            onClick={() => {
-              if (selectedStacks.includes(stack)) {
-                setSelectedStacks(selectedStacks.filter((s) => s !== stack));
-              } else {
-                setSelectedStacks([...selectedStacks, stack]);
-              }
-            }}
-            className={`px-3 py-1 rounded-full text-sm font-semibold ${
-              selectedStacks.includes(stack) ? 'bg-[#CA0000] text-white' : 'bg-gray-700 hover:bg-gray-600'
-            } transition-all`}
-          >
-            {stack}
-          </button>
-        ))}
-      </div>
-
-      {/* Projects Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 animate-fade-in">
-        {filteredProjects.map((project) => (
-          <div
-            key={project.id}
-            className="bg-gradient-to-br from-[#1a1a1a] to-[#100001] p-6 rounded-2xl shadow-lg hover:scale-[1.03] hover:shadow-[0_0_15px_#ca0000] transition-all duration-300 cursor-pointer flex flex-col justify-between min-h-[220px]"
-            onClick={() => handleProjectClick(project)}
-          >
-            <div className="mb-4">
-              {/* Title + Date */}
-              <div className="flex items-center justify-between mb-2">
-                <h3 className="text-xl font-bold">{project.title}</h3>
-                <span className="text-gray-400 text-xs">{project.date}</span>
+            <div className="relative z-10 grid gap-6 lg:grid-cols-2">
+              <div className="space-y-3">
+                <p className="workspace-section-label">discipline</p>
+                <div className="flex flex-wrap gap-2">
+                  {['All', ...projectDisciplines].map((discipline) => (
+                    <button
+                      key={discipline}
+                      type="button"
+                      onClick={() => setSelectedDiscipline(discipline)}
+                      className={selectedDiscipline === discipline ? 'chip bg-white/12 text-white' : 'chip'}
+                    >
+                      {discipline}
+                    </button>
+                  ))}
+                </div>
               </div>
 
-              {/* Relevance*/}
-              <p className="text-gray-400 text-sm mb-2">{project.relevance}</p>
-              
-              {/* Brief */}
-              <p className="text-gray-400 text-sm">{project.brief}</p>
-            </div>
-          
-            {/* Focus Badge */}
-            <div className="flex flex-wrap gap-2">
-              {project.focus.map((focusArea: string, idx: number) => (
-                <span
-                  key={idx}
-                  className="bg-[#CA0000] text-white px-2 py-1 rounded-full text-xs font-semibold"
-                >
-                  {focusArea}
-                </span>
-              ))}
+              <div className="space-y-3">
+                <p className="workspace-section-label">popular keywords</p>
+                <div className="flex flex-wrap gap-2">
+                  {['All', ...topProjectKeywords].map((keyword) => (
+                    <button
+                      key={keyword}
+                      type="button"
+                      onClick={() => setSelectedKeyword(keyword)}
+                      className={selectedKeyword === keyword ? 'chip bg-white/12 text-white' : 'chip'}
+                    >
+                      {keyword}
+                    </button>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
-        ))}
+        </div>
+      </Reveal>
+
+      <div className="sticky top-24 z-20 mt-6 flex justify-end">
+        <div className="chip border-white/14 bg-[rgba(7,24,32,0.92)] text-white shadow-[0_12px_30px_rgba(0,0,0,0.28)] backdrop-blur-xl">
+          {filteredProjects.length === projects.length
+            ? `${projects.length} projects loaded`
+            : `${filteredProjects.length} of ${projects.length} projects`}
+        </div>
       </div>
 
-      
+      {filteredProjects.length > 0 ? (
+        <div className="mt-6 grid gap-10 lg:grid-cols-2 2xl:grid-cols-3">
+          {filteredProjects.map((project, index) => (
+            <Reveal key={project.slug} delay={(index % 6) * 55} variant={index % 3 === 0 ? 'up' : index % 3 === 1 ? 'left' : 'right'}>
+              <ProjectCard project={project} clickable={false} />
+            </Reveal>
+          ))}
+        </div>
+      ) : (
+        <Reveal delay={160} variant="scale">
+          <div className="terminal-panel mt-10">
+            <div className="workspace-bar">
+              <div className="workspace-dots">
+                <span className="workspace-dot" />
+                <span className="workspace-dot" />
+                <span className="workspace-dot" />
+              </div>
+              <span className="workspace-title">search-empty.log</span>
+            </div>
+            <div className="terminal-body text-center">
+              <p className="font-display text-3xl text-white">No projects match the current filters.</p>
+              <p className="mt-4 text-sm leading-7 text-white/62">Try clearing the keyword or discipline filter, or broaden the search term.</p>
+            </div>
+          </div>
+        </Reveal>
+      )}
     </div>
   );
 }

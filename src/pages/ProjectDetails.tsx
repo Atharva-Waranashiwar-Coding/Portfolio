@@ -1,139 +1,167 @@
-import { useMemo, useEffect, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
-import { projects } from '../data/projectList';
-import ReactMarkdown from 'react-markdown';
+import { ArrowLeft, FileCode2 } from 'lucide-react';
+import { useMemo } from 'react';
+import { Link, useParams } from 'react-router-dom';
+import Reveal from '../components/Reveal';
+import { findProject } from '../lib/content';
 
 function ProjectDetails() {
-  const { id } = useParams();
-  const navigate = useNavigate();
+  const { projectId } = useParams<{ projectId: string }>();
 
-  const project = useMemo<any>(() => {
-    if (!id) return null;
-    const pid = parseInt(id, 10);
-    return projects.find((p) => p.id === pid) || null;
-  }, [id]);
-
-  const [caseStudyContent, setCaseStudyContent] = useState<string | null>(null);
-
-  useEffect(() => {
-    if (project?.caseStudyRoute) {
-      navigate(project.caseStudyRoute, { replace: true });
+  const project = useMemo(() => {
+    if (!projectId) {
+      return null;
     }
-  }, [navigate, project]);
 
-  if (project?.caseStudyRoute) {
-    return null;
-  }
-
-  useEffect(() => {
-    let mounted = true;
-    async function loadCaseStudy() {
-      setCaseStudyContent(null);
-      if (!project || !project.caseStudy) return;
-
-      // load markdown files from src/posts as raw text
-      const modules = (import.meta as any).glob('../posts/*.md', { as: 'raw' });
-
-      const matchKey = Object.keys(modules).find((k) => k.includes(project.caseStudy));
-      if (!matchKey) return;
-
-      try {
-        const content = await modules[matchKey]();
-        if (mounted) setCaseStudyContent(content as string);
-      } catch (err) {
-        // ignore load errors
-      }
-    }
-    loadCaseStudy();
-    return () => { mounted = false; };
-  }, [project]);
+    return findProject(projectId);
+  }, [projectId]);
 
   if (!project) {
     return (
-      <div className="bg-[#100001] text-white min-h-screen p-8 flex items-center justify-center">
-        <div className="max-w-2xl text-center">
-          <h2 className="text-2xl font-bold mb-4">Project not found</h2>
-          <p className="text-gray-400 mb-6">The project you are looking for does not exist.</p>
-          <button
-            className="px-4 py-2 rounded-full bg-[#CA0000] text-white"
-            onClick={() => navigate('/projects')}
-          >
-            Back to Projects
-          </button>
-        </div>
+      <div className="section-shell py-20">
+        <Reveal>
+          <div className="terminal-panel mx-auto max-w-3xl">
+            <div className="workspace-bar">
+              <div className="workspace-dots">
+                <span className="workspace-dot" />
+                <span className="workspace-dot" />
+                <span className="workspace-dot" />
+              </div>
+              <span className="workspace-title">project-error.log</span>
+            </div>
+            <div className="terminal-body text-center">
+              <p className="font-display text-4xl text-white">Project not found.</p>
+              <p className="mt-4 text-sm leading-7 text-white/62">
+                The route does not match any current project entry. Use the projects index to browse the updated portfolio.
+              </p>
+              <Link to="/projects" className="button-secondary mt-8 inline-flex">
+                Back to projects
+              </Link>
+            </div>
+          </div>
+        </Reveal>
       </div>
     );
   }
 
   return (
-    <div className="bg-[#100001] text-white min-h-screen p-8">
-      <div className="max-w-4xl mx-auto">
-        <button
-          className="mb-6 text-sm text-gray-300 hover:underline"
-          onClick={() => navigate('/projects')}
-        >
-          ← Back to Projects
-        </button>
-
-        <h1 className="text-4xl font-bold mb-4">{project.title}</h1>
-        <div className="flex items-center justify-between mb-6">
-          <div className="text-gray-400">{project.relevance}</div>
-          <div className="text-gray-400">{project.date}</div>
-        </div>
-
-        <p className="text-gray-300 mb-6">{project.description}</p>
-
-        {/* Case study or Process section (optional) */}
-        {caseStudyContent ? (
-          <div className="mb-6 prose max-w-none">
-            <ReactMarkdown>{caseStudyContent}</ReactMarkdown>
+    <div className="section-shell py-14 sm:py-16 lg:py-20">
+      <Reveal variant="left">
+        <div className="workspace-window">
+          <div className="workspace-bar">
+            <div className="workspace-dots">
+              <span className="workspace-dot" />
+              <span className="workspace-dot" />
+              <span className="workspace-dot" />
+            </div>
+            <span className="workspace-title">{project.slug}.readme</span>
           </div>
-        ) : (
-          <div className="mb-6">
-            <h2 className="text-2xl font-semibold mb-3">Process</h2>
-            {project.process ? (
-              <ol className="list-decimal list-inside text-gray-300 space-y-2">
-                {project.process.map((step: string, idx: number) => (
-                  <li key={idx}>{step}</li>
+
+          <div className="space-y-6 p-8 sm:p-10">
+            <Link to="/projects" className="inline-flex items-center gap-2 text-sm text-white/60 transition-colors duration-300 hover:text-white">
+              <ArrowLeft size={16} />
+              Back to projects
+            </Link>
+
+            <div className="flex items-center gap-3">
+              <FileCode2 size={18} className="text-[var(--accent)]" />
+              <span className="code-card-title">{project.associatedWith}</span>
+            </div>
+
+            <div className="space-y-4">
+              <h1 className="font-display text-5xl leading-none text-white sm:text-6xl">{project.title}</h1>
+              <p className="max-w-3xl text-base leading-8 text-white/72 sm:text-lg">{project.brief}</p>
+            </div>
+
+            <div className="flex flex-wrap gap-2">
+              {project.disciplines.map((discipline) => (
+                <span key={discipline} className="chip">
+                  {discipline}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </Reveal>
+
+      <div className="mt-8 grid gap-4 lg:grid-cols-3">
+        <Reveal delay={70} variant="scale">
+          <div className="code-panel">
+            <p className="workspace-section-label">engagement</p>
+            <p className="mt-3 text-lg font-semibold text-white">{project.associatedWith}</p>
+          </div>
+        </Reveal>
+        <Reveal delay={120} variant="scale">
+          <div className="code-panel">
+            <p className="workspace-section-label">disciplines</p>
+            <p className="mt-3 text-lg font-semibold text-white">{project.disciplines.join(' · ')}</p>
+          </div>
+        </Reveal>
+        <Reveal delay={170} variant="scale">
+          <div className="code-panel">
+            <p className="workspace-section-label">stack signals</p>
+            <p className="mt-3 text-lg font-semibold text-white">{project.keywords.slice(0, 3).join(' · ')}</p>
+          </div>
+        </Reveal>
+      </div>
+
+      <div className="mt-10 grid gap-6 xl:grid-cols-[1.12fr,0.88fr]">
+        <Reveal delay={80} variant="left">
+          <article className="terminal-panel">
+            <div className="workspace-bar">
+              <div className="workspace-dots">
+                <span className="workspace-dot" />
+                <span className="workspace-dot" />
+                <span className="workspace-dot" />
+              </div>
+              <span className="workspace-title">overview.ts</span>
+            </div>
+            <div className="terminal-body">
+              <p className="workspace-section-label">project overview</p>
+              <div className="mt-6 space-y-5">
+                {project.overview.map((paragraph, index) => (
+                  <div key={paragraph} className="code-line">
+                    <span className="code-line-number">{index + 1}</span>
+                    <span className="code-line-content">{paragraph}</span>
+                  </div>
                 ))}
-              </ol>
-            ) : (
-              <p className="text-gray-400">A detailed breakdown of this project's process will be available here.</p>
-            )}
-          </div>
-        )}
+              </div>
+            </div>
+          </article>
+        </Reveal>
 
-        <div className="mb-6">
-          <h2 className="text-2xl font-semibold mb-3">Tech Stack</h2>
-          <div className="flex flex-wrap gap-2">
-            {project.stack.map((tech: string, idx: number) => (
-              <span key={idx} className="px-3 py-1 rounded-full bg-gray-700 text-sm">{tech}</span>
-            ))}
-          </div>
-        </div>
+        <Reveal delay={140} variant="right">
+          <div className="space-y-6">
+            <aside className="code-card panel-hover">
+              <div className="code-card-header">
+                <span className="code-card-title">keywords.json</span>
+              </div>
+              <div className="p-7 sm:p-8">
+                <div className="flex flex-wrap gap-2">
+                  {project.keywords.map((keyword) => (
+                    <span key={keyword} className="chip">
+                      {keyword}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </aside>
 
-        <div className="flex gap-4">
-          {project.github && (
-            <a
-              href={project.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[#CA0000] hover:underline"
-            >
-              View on GitHub
-            </a>
-          )}
-          {project.live && (
-            <a
-              href={project.live}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[#CA0000] hover:underline"
-            >
-              Visit Live Site
-            </a>
-          )}
-        </div>
+            <aside className="code-card panel-hover">
+              <div className="code-card-header">
+                <span className="code-card-title">capabilities.yaml</span>
+              </div>
+              <div className="p-7 sm:p-8">
+                <div className="flex flex-wrap gap-2">
+                  {project.skills.map((skill) => (
+                    <span key={skill} className="chip">
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </aside>
+          </div>
+        </Reveal>
       </div>
     </div>
   );
