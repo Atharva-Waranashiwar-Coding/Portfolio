@@ -1,0 +1,156 @@
+{
+  "skills": {
+    "programming_languages": [
+      "Python",
+      "Java",
+      "JavaScript",
+      "TypeScript",
+      "C++"
+    ],
+    "frontend": {
+      "core": [
+        "HTML",
+        "CSS",
+        "Responsive Design",
+        "UI Component Design",
+        "State Management"
+      ],
+      "frameworks_libraries": [
+        "React",
+        "Angular",
+        "AngularJS"
+      ],
+      "styling": [
+        "Tailwind CSS",
+        "CSS Modules",
+        "Modern CSS Practices"
+      ],
+      "tools": [
+        "Vite",
+        "React Router",
+        "Webflow"
+      ]
+    },
+    "backend": {
+      "languages_frameworks": [
+        "FastAPI",
+        "Spring Boot",
+        "Node.js",
+        "Express.js"
+      ],
+      "api": [
+        "REST API Design",
+        "API Architecture",
+        "API Integration",
+        "Server-side Logic"
+      ],
+      "auth_security": [
+        "JWT Authentication",
+        "Session Management",
+        "Role-Based Access Control"
+      ]
+    },
+    "databases": {
+      "relational": [
+        "PostgreSQL",
+        "Relational Database Design",
+        "Query Optimization"
+      ],
+      "nosql": [
+        "MongoDB",
+        "Firebase Firestore"
+      ],
+      "orm": [
+        "SQLAlchemy"
+      ],
+      "caching": [
+        "Redis (basic)"
+      ]
+    },
+    "cloud_devops": {
+      "cloud_platforms": [
+        "AWS (EC2, S3, IAM, VPC, Load Balancer)",
+        "GCP (Cloud Functions, Firebase)"
+      ],
+      "containerization": [
+        "Docker",
+        "Kubernetes (basic)"
+      ],
+      "ci_cd": [
+        "GitHub Actions",
+        "Azure DevOps"
+      ],
+      "infra": [
+        "Terraform (basic)",
+        "Deployment Pipelines",
+        "Infrastructure Fundamentals"
+      ],
+      "monitoring": [
+        "Prometheus",
+        "Grafana"
+      ]
+    },
+    "ai_ml": {
+      "genai": [
+        "OpenAI API Integration",
+        "Prompt Engineering",
+        "LLM Application Development",
+        "RAG (Retrieval-Augmented Generation)",
+        "Embeddings & Vector Search"
+      ],
+      "ml_cv": [
+        "Machine Learning Fundamentals",
+        "TensorFlow (basic)",
+        "OpenCV",
+        "MediaPipe",
+        "Computer Vision"
+      ]
+    },
+    "data_engineering": [
+      "Data Pipelines",
+      "ETL Concepts",
+      "Data Modeling",
+      "Data Processing Workflows",
+      "Batch Processing",
+      "Data Validation"
+    ],
+    "system_design": [
+      "Scalable System Design",
+      "Distributed Systems Basics",
+      "Microservices Architecture",
+      "Workflow Orchestration",
+      "Observability",
+      "Performance Optimization"
+    ],
+    "tools_frameworks": [
+      "Git",
+      "GitHub",
+      "Postman",
+      "MLflow",
+      "Airflow",
+      "Figma (basic)",
+      "Canva",
+      "VS Code",
+      "NetBeans"
+    ],
+    "product_ux": [
+      "UX Research",
+      "User Journey Mapping",
+      "Heuristic Evaluation",
+      "Usability Testing",
+      "Wireframing",
+      "Product Thinking",
+      "Feature Design"
+    ],
+    "embedded_iot": [
+      "Arduino",
+      "Embedded C++",
+      "Sensor Integration",
+      "RFID Systems",
+      "Accelerometers (MPU6050)",
+      "IR Sensors",
+      "Robotics",
+      "Control Systems"
+    ]
+  }
+}

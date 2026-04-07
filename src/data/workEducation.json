@@ -1,0 +1,137 @@
+{
+  "work_experience": [
+    {
+      "position": "Web Architect",
+      "company": "Institute for Experiential AI, Northeastern University",
+      "duration": {
+        "from": "November 2025",
+        "to": "Present"
+      },
+      "description": [
+        "Designed and implemented scalable, CMS-driven web architectures using Webflow, improving maintainability and enabling dynamic content delivery across multiple sections of the platform.",
+        "Developed custom JavaScript-based filtering, query parameter handling, and interactive UI components to enhance user experience and support complex data-driven navigation.",
+        "Collaborated with stakeholders to translate design concepts into production-ready implementations, bridging no-code tools with advanced frontend engineering practices."
+      ],
+      "skills": [
+        "Webflow",
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "Frontend Development",
+        "CMS Architecture",
+        "UX Implementation",
+        "System Design"
+      ]
+    },
+    {
+      "position": "Full-Stack Engineer",
+      "company": "10th Inning Ventures",
+      "duration": {
+        "from": "January 2025",
+        "to": "August 2025"
+      },
+      "description": [
+        "Developed and optimized full-stack applications, building backend services and frontend interfaces to support athlete management, booking systems, and AI-driven features.",
+        "Implemented AI-powered coaching systems and computer vision pipelines, integrating external APIs and processing workflows to enhance platform functionality.",
+        "Improved system performance and scalability by optimizing API interactions, data flows, and backend architecture across production-level features."
+      ],
+      "skills": [
+        "React",
+        "FastAPI",
+        "Python",
+        "PostgreSQL",
+        "Firebase",
+        "OpenAI API",
+        "Computer Vision",
+        "Full Stack Development",
+        "API Design",
+        "Cloud Integration"
+      ]
+    },
+    {
+      "position": "Software Engineer",
+      "company": "Persistent Systems",
+      "duration": {
+        "from": "August 2021",
+        "to": "September 2023"
+      },
+      "description": [
+        "Led development of a laboratory data directory web application, improving accessibility and usability of structured experimental data.",
+        "Streamlined ORM interactions between backend services and relational databases using SQLAlchemy, improving data management efficiency and reliability.",
+        "Collaborated with cross-functional teams to design scalable backend systems and integrate frontend components for production-ready applications."
+      ],
+      "skills": [
+        "FastAPI",
+        "Python",
+        "SQLAlchemy",
+        "PostgreSQL",
+        "Angular",
+        "Backend Development",
+        "Database Design",
+        "API Development",
+        "System Optimization"
+      ]
+    },
+    {
+      "position": "Engineering Intern",
+      "company": "Automate Engineering",
+      "duration": {
+        "from": "December 2020",
+        "to": "March 2021"
+      },
+      "description": [
+        "Developed an RFID-based smart billing system to automate checkout processes and reduce transaction time in retail environments.",
+        "Built computer vision models for face mask detection and sign language recognition, applying machine learning techniques to real-world problems.",
+        "Worked on embedded systems and robotics projects involving sensors, microcontrollers, and automation workflows."
+      ],
+      "skills": [
+        "Arduino",
+        "C++",
+        "Python",
+        "OpenCV",
+        "TensorFlow",
+        "Machine Learning",
+        "Embedded Systems",
+        "Robotics",
+        "Computer Vision"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Master of Science",
+      "field": "Information Systems",
+      "school": "Northeastern University",
+      "courseworks": [
+        "Program Structures & Algorithms",
+        "Network Structures & Cloud Computing",
+        "Software Quality Control & Management",
+        "Theory & Practical Applications of Generative AI",
+        "UX Design in Era of Generative AI"
+      ],
+      "gpa": null,
+      "duration": {
+        "from": "2024",
+        "to": "May 2026 (Expected)"
+      }
+    },
+    {
+      "degree": "Bachelor of Engineering",
+      "field": "Electronics & Telecommunications",
+      "school": "Pune University, Pune, India",
+      "courseworks": [
+        "Data Structures & Algorithms",
+        "Object Oriented Programming",
+        "Artificial Intelligence",
+        "Machine Learning",
+        "Computer Networks & Security",
+        "Business Management"
+      ],
+      "gpa": null,
+      "duration": {
+        "from": "2017",
+        "to": "July 2021"
+      }
+    }
+  ]
+}

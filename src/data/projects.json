@@ -1,0 +1,279 @@
+{
+  "projects": [
+    {
+      "name": "Athlete Management Platform",
+      "detailed_description": [
+        "Built a full-stack athlete management platform to manage athlete profiles, progress data, weekly tasks, highlights, and training workflows in a unified system.",
+        "Integrated Firebase Authentication, Firestore, React-based frontend flows, and backend services to support real user operations and secure application access.",
+        "Connected AI modules, booking-related functionality, and performance tracking features so athletes, coaches, and platform admins could work within one ecosystem."
+      ],
+      "keywords": ["React", "Firebase Authentication", "Firestore", "FastAPI", "Python", "OpenAI API", "Full Stack", "Athlete Tech", "Cloud"],
+      "skills": ["Frontend Development", "Backend Development", "Authentication", "Database Design", "API Integration", "Product Development"],
+      "associated_with": "10th Inning Ventures / One Percent Athlete"
+    },
+    {
+      "name": "AI Coach for Athletes",
+      "detailed_description": [
+        "Developed an AI-based coaching assistant that generated personalized responses for athletes based on their profile, activity context, and training-related inputs.",
+        "Integrated OpenAI-powered workflows into the broader athlete platform to deliver guidance without forcing users to leave the main product experience.",
+        "Focused on practical product value by designing the assistant around real athlete use cases rather than a standalone chat demo."
+      ],
+      "keywords": ["OpenAI API", "React", "Python", "FastAPI", "AI Assistant", "LLM Integration", "Personalization"],
+      "skills": ["AI Integration", "Prompt Design", "Backend API Development", "User-Centered Product Thinking", "Feature Integration"],
+      "associated_with": "10th Inning Ventures / One Percent Athlete"
+    },
+    {
+      "name": "Facility and Event Management System",
+      "detailed_description": [
+        "Built a booking and event scheduling system that managed facilities, date ranges, availability slots, and event-related reservations.",
+        "Integrated calendar-driven logic so facility availability could be checked, updated, and marked as booked through application workflows.",
+        "Designed the feature to support operational use cases where sports facilities, rooms, or spaces must be assigned reliably across multiple events."
+      ],
+      "keywords": ["React", "FastAPI", "Python", "Google Calendar API", "Booking System", "Scheduling", "Full Stack"],
+      "skills": ["Calendar Integration", "Business Logic Design", "State Management", "Backend Development", "CRUD Systems"],
+      "associated_with": "10th Inning Ventures / One Percent Athlete"
+    },
+    {
+      "name": "Video Analysis System for Athletes",
+      "detailed_description": [
+        "Implemented a video analysis pipeline for athlete exercises using computer vision techniques to process uploaded videos and generate exercise-related insights.",
+        "Designed the workflow around serverless execution and storage integration so uploaded media could be analyzed and replaced with processed output.",
+        "Planned the system to support multiple movement types such as squats, push-ups, balance, plank hold, and stretching exercises."
+      ],
+      "keywords": ["Python", "OpenCV", "MediaPipe", "GCP Functions", "Firebase Storage", "Computer Vision", "Serverless"],
+      "skills": ["Computer Vision", "Python Development", "Cloud Functions", "Media Processing", "Automation", "System Design"],
+      "associated_with": "10th Inning Ventures / One Percent Athlete"
+    },
+    {
+      "name": "FitGenie - AI Fitness and Nutrition Assistant",
+      "detailed_description": [
+        "Built a full-stack AI fitness and nutrition application with authentication, dashboard workflows, profile setup, and personalized plan generation.",
+        "Designed a multi-step plan generation flow where users provide goals, schedule, and diet preferences before receiving AI-generated workout and nutrition plans.",
+        "Implemented version-style revise and finalize flows for generated plans to make the application feel closer to a production SaaS experience than a simple AI demo."
+      ],
+      "keywords": ["React", "FastAPI", "PostgreSQL", "OpenAI API", "Tailwind CSS", "Authentication", "Full Stack", "Health Tech"],
+      "skills": ["Full Stack Development", "AI Product Development", "Frontend Architecture", "API Design", "Database Modeling", "User Workflow Design"],
+      "associated_with": "Personal Project"
+    },
+    {
+      "name": "Job Application Tracker",
+      "detailed_description": [
+        "Designed a job tracking product that goes beyond basic CRUD by modeling pipeline stages, transitions, reminders, analytics, and activity history.",
+        "Planned a production-style architecture with JWT authentication, stage-based Kanban workflows, PostgreSQL-backed persistence, and backend-driven transition logic.",
+        "Framed the project around product thinking by solving real job search pain points such as stalled applications, interview management, and process visibility."
+      ],
+      "keywords": ["AngularJS", "Spring Boot", "Java", "PostgreSQL", "JWT", "Kanban", "Product Thinking", "Full Stack"],
+      "skills": ["Backend Architecture", "Relational Modeling", "Authentication", "Workflow Design", "Product Strategy", "API Development"],
+      "associated_with": "Personal Project"
+    },
+    {
+      "name": "Prompt Workflow Studio",
+      "detailed_description": [
+        "Designed an AI workflow orchestration platform centered around graph-based prompt pipelines with nodes such as prompt, tool, memory, validator, and output.",
+        "Focused on observability, reproducibility, versioning, and run inspection so complex prompt workflows could be treated like real engineering systems.",
+        "Positioned the product as a solution to replace ad hoc prompt scripts with structured, collaborative, and auditable workflow execution."
+      ],
+      "keywords": ["Python", "FastAPI", "PostgreSQL", "OpenAI API", "Workflow Orchestration", "LLM Tools", "AI Infrastructure"],
+      "skills": ["System Architecture", "AI Tooling Design", "Backend Design", "Product Thinking", "Workflow Modeling"],
+      "associated_with": "Personal Project"
+    },
+    {
+      "name": "Creator Campaign Copilot",
+      "detailed_description": [
+        "Built and evolved a multi-brand campaign operations workspace for managing projects, campaigns, briefs, reviews, milestones, analytics, templates, and billing controls.",
+        "Structured the product around real operational questions faced by content and marketing teams so planning, approvals, collaboration, and tracking could live in one system.",
+        "Explored MCP-assisted helper tools as an extension layer to support guideline retrieval, validation, template access, and review summarization."
+      ],
+      "keywords": ["FastAPI", "PostgreSQL", "RBAC", "SaaS", "Campaign Management", "MCP", "AI Tooling", "Multi-Tenant"],
+      "skills": ["SaaS Architecture", "Data Modeling", "Role-Based Access Control", "Feature Planning", "Backend Development", "Product Design"],
+      "associated_with": "Personal Project"
+    },
+    {
+      "name": "Career Growth Platform",
+      "detailed_description": [
+        "Built a platform concept focused on helping users identify skill gaps, receive personalized learning paths, connect with mentors, build portfolios, and track progress.",
+        "Drove the project through a product and UX process that included personas, journey maps, task analysis, heuristic evaluation, usability testing, and structured design iterations.",
+        "Used the project to connect research insights with interface design and product requirements instead of treating design deliverables as isolated coursework artifacts."
+      ],
+      "keywords": ["React", "Node.js", "Express", "PostgreSQL", "UX Research", "Career Platform", "Product Design"],
+      "skills": ["UX Research", "Product Design", "Full Stack Thinking", "Usability Testing", "Requirements Analysis"],
+      "associated_with": "Academic / Personal Project"
+    },
+    {
+      "name": "George Soros RAG Chatbot",
+      "detailed_description": [
+        "Built a retrieval-augmented chatbot grounded on a curated George Soros corpus so generated answers could stay tied to source material.",
+        "Designed the pipeline around chunking, embeddings, vector retrieval, prompt orchestration, memory, and safety controls to improve answer grounding.",
+        "Used the project to demonstrate applied GenAI engineering with a stronger focus on reliable retrieval and context-aware answering."
+      ],
+      "keywords": ["RAG", "OpenAI API", "Vector Database", "Embeddings", "Prompt Orchestration", "React", "Python"],
+      "skills": ["RAG Architecture", "LLM Integration", "Information Retrieval", "Context Engineering", "GenAI Development"],
+      "associated_with": "CSYE 7380 Course Project"
+    },
+    {
+      "name": "Pairs Trading Lab",
+      "detailed_description": [
+        "Built a quantitative finance module that identifies candidate pairs using correlation and cointegration concepts before modeling spread behavior.",
+        "Implemented rolling statistics and z-score driven signal generation to support long and short trade decision logic suitable for backtesting workflows.",
+        "Combined finance-oriented analytical thinking with software implementation to create a research-oriented, reproducible experimentation setup."
+      ],
+      "keywords": ["Python", "Quant Finance", "Pairs Trading", "Time Series", "Signal Generation", "Backtesting"],
+      "skills": ["Quantitative Analysis", "Python Development", "Data Analysis", "Algorithmic Logic", "Financial Modeling"],
+      "associated_with": "CSYE 7380 Course Project"
+    },
+    {
+      "name": "Laboratory Data Directory",
+      "detailed_description": [
+        "Led development of a laboratory data directory web application to improve accessibility of experiment-related data and user interaction for internal stakeholders.",
+        "Used FastAPI, PostgreSQL, SQLAlchemy, and Angular-oriented application patterns to build a system that supported structured data management workflows.",
+        "Focused on cleaner ORM interactions and maintainable backend design so the system could scale more reliably as features and data complexity grew."
+      ],
+      "keywords": ["FastAPI", "PostgreSQL", "SQLAlchemy", "Angular", "Web Application", "Data Management", "Professional Experience"],
+      "skills": ["Backend Development", "ORM Optimization", "Relational Databases", "API Development", "Frontend Integration"],
+      "associated_with": "Persistent Systems"
+    },
+    {
+      "name": "AWS DevOps and API Development Project Set",
+      "detailed_description": [
+        "Completed a set of cloud-focused projects involving API development, EC2 hosting, static hosting, IAM, networking, load balancing, and environment configuration.",
+        "Used the work to gain practical familiarity with how applications are deployed, exposed, secured, and monitored in AWS-based environments.",
+        "Approached the project set as a systems learning experience rather than just isolated cloud service exercises."
+      ],
+      "keywords": ["AWS", "EC2", "S3", "IAM", "VPC", "Load Balancer", "Python", "Flask", "Cloud"],
+      "skills": ["Cloud Computing", "Deployment", "Infrastructure Basics", "API Hosting", "Networking Fundamentals"],
+      "associated_with": "Northeastern University Coursework"
+    },
+    {
+      "name": "ChurnOps",
+      "detailed_description": [
+        "Built an end-to-end MLOps-style project covering model training, experiment tracking, model registration, API serving, and service monitoring.",
+        "Integrated operational tooling such as MLflow, FastAPI, Prometheus, Grafana, and Airflow to show how prediction systems are managed in production-like environments.",
+        "Approached the project from an operations and deployment perspective, using it as a bridge between DevOps interests and practical ML lifecycle exposure."
+      ],
+      "keywords": ["MLflow", "FastAPI", "Prometheus", "Grafana", "Airflow", "MLOps", "Monitoring", "Deployment"],
+      "skills": ["MLOps", "Monitoring", "API Serving", "Experiment Tracking", "Operational Thinking", "Observability"],
+      "associated_with": "Personal / Learning Project"
+    },
+    {
+      "name": "Recipe Hub",
+      "detailed_description": [
+        "Built a recipe-sharing web application that allows users to discover, save, manage, and interact with recipe content through a structured web experience.",
+        "Implemented authentication and CRUD-based workflows so users could maintain their own recipe-related data and application state.",
+        "Used the project to strengthen full-stack fundamentals and build a polished user-facing application around a familiar real-world use case."
+      ],
+      "keywords": ["MongoDB", "Express.js", "React", "Node.js", "CRUD", "Authentication", "MERN"],
+      "skills": ["Full Stack Development", "CRUD Systems", "Authentication", "Frontend Development", "RESTful Thinking"],
+      "associated_with": "Northeastern University Coursework"
+    },
+    {
+      "name": "Finance Tracker",
+      "detailed_description": [
+        "Developed a personal finance application with secure login, budgeting support, categorized expenses, and transaction tracking workflows.",
+        "Built the interface to support responsive user interactions while using Firebase-backed services for authentication and data storage.",
+        "Focused on clean frontend behavior and practical day-to-day usability for a personal productivity use case."
+      ],
+      "keywords": ["React", "Firebase Authentication", "Firestore", "Tailwind CSS", "Finance App", "Budgeting"],
+      "skills": ["Frontend Development", "Authentication", "Cloud Database Usage", "Responsive Design", "State Management"],
+      "associated_with": "Personal Project"
+    },
+    {
+      "name": "Real Estate Management System",
+      "detailed_description": [
+        "Created a property-oriented management application for listing, searching, and handling real estate-related information in a structured interface.",
+        "Designed user-facing workflows around browsing and managing property records to simulate a practical line-of-business application.",
+        "Used the project to strengthen object-oriented programming and application design skills in a Java-based development environment."
+      ],
+      "keywords": ["Java", "NetBeans", "Real Estate", "Desktop or App Development", "Application Engineering"],
+      "skills": ["Java Development", "Object-Oriented Design", "Application Logic", "UI Flow Design"],
+      "associated_with": "Northeastern University Coursework"
+    },
+    {
+      "name": "AI Solutions Hub Webflow Platform Work",
+      "detailed_description": [
+        "Built and customized Webflow-based website experiences for Northeastern's Institute for Experiential AI, including CMS-driven sections and advanced custom embeds.",
+        "Implemented filtering behavior, query-parameter-driven interactions, and dynamic case study browsing experiences using custom JavaScript and Webflow CMS patterns.",
+        "Used the work to bridge no-code CMS tooling with production-grade frontend thinking, architecture decisions, and user experience improvements."
+      ],
+      "keywords": ["Webflow", "CMS", "JavaScript", "HTML", "CSS", "Filtering", "Case Studies", "Custom Embed"],
+      "skills": ["Webflow Development", "Frontend Engineering", "CMS Architecture", "Custom JavaScript", "UX Implementation"],
+      "associated_with": "Institute for Experiential AI at Northeastern University"
+    },
+    {
+      "name": "RFID-Based Smart Billing System",
+      "detailed_description": [
+        "Built an RFID-enabled billing system intended to reduce manual checkout time and improve retail-style transaction flow.",
+        "Used embedded system components and controller programming to automate item detection and billing-related behavior.",
+        "Applied the project in an internship context to solve a real operational inefficiency rather than just build a classroom prototype."
+      ],
+      "keywords": ["Arduino", "RFID", "Embedded Systems", "C++", "Automation", "Billing System"],
+      "skills": ["Embedded Development", "Hardware Interfacing", "Automation", "Sensor Integration", "Problem Solving"],
+      "associated_with": "Automate Engineering Internship"
+    },
+    {
+      "name": "Face Mask Detection Model",
+      "detailed_description": [
+        "Built a computer vision model for real-time face mask detection using image processing and machine learning workflows.",
+        "Used the project to explore practical public-safety-oriented inference use cases with camera input and detection output.",
+        "Strengthened experience in applying model-building concepts to a visible, real-time vision task."
+      ],
+      "keywords": ["Python", "TensorFlow", "OpenCV", "Computer Vision", "Real-Time Detection", "Machine Learning"],
+      "skills": ["Machine Learning", "Computer Vision", "Model Training", "Inference Workflows", "Python Development"],
+      "associated_with": "Automate Engineering Internship"
+    },
+    {
+      "name": "Sign Language Recognition System",
+      "detailed_description": [
+        "Created a gesture recognition system that maps hand movements or signs to corresponding outputs to support accessibility-oriented interaction.",
+        "Used computer vision and machine learning concepts to recognize visual input patterns and convert them into meaningful signals.",
+        "Approached the project as a socially useful application of AI rather than a purely academic exercise."
+      ],
+      "keywords": ["Python", "OpenCV", "Machine Learning", "Gesture Recognition", "Accessibility", "Computer Vision"],
+      "skills": ["Computer Vision", "Pattern Recognition", "Python Development", "Applied Machine Learning", "Accessibility Thinking"],
+      "associated_with": "Automate Engineering Internship"
+    },
+    {
+      "name": "Hand Gesture Controlled Robot",
+      "detailed_description": [
+        "Built a robot controlled through hand gestures using accelerometer-based input and wireless communication between control and motion components.",
+        "Programmed the system to translate tilt-based gestures into directional robotic movement for intuitive control without a physical joystick or remote.",
+        "Used the project to combine embedded programming, hardware interfacing, and robotics-oriented control logic."
+      ],
+      "keywords": ["Arduino", "Accelerometer", "RF Modules", "Embedded Systems", "Robotics", "C++"],
+      "skills": ["Embedded Programming", "Robotics", "Sensor Integration", "Wireless Communication", "Control Logic"],
+      "associated_with": "Bachelor's Academic Project"
+    },
+    {
+      "name": "IMU-Controlled Drone with Object Detection",
+      "detailed_description": [
+        "Built a drone-oriented system that combines IMU-based stabilization ideas with computer vision-driven object detection and obstacle awareness.",
+        "Explored how onboard processing and sensor data can work together to support navigation adjustments based on detected environmental conditions.",
+        "Used the project as a multidisciplinary exercise across embedded systems, computer vision, and robotics."
+      ],
+      "keywords": ["Python", "OpenCV", "IMU Sensors", "Drone Systems", "Object Detection", "Embedded Systems"],
+      "skills": ["Computer Vision", "Sensor Fusion Thinking", "Embedded Systems", "Robotics", "Applied AI"],
+      "associated_with": "Bachelor's Academic Research Project"
+    },
+    {
+      "name": "Signal Processing and Fourier Transform Web Application",
+      "detailed_description": [
+        "Developed a web-based application to visualize signals in both time and frequency domains for better conceptual understanding of signal behavior.",
+        "Implemented Fast Fourier Transform logic to convert time-domain signals into their frequency-domain representation in an interactive way.",
+        "Used the project to connect engineering theory with practical software visualization for educational and analytical value."
+      ],
+      "keywords": ["Signal Processing", "FFT", "Web Application", "Visualization", "Engineering Software"],
+      "skills": ["Signal Processing", "Analytical Thinking", "Visualization", "Engineering Application Development"],
+      "associated_with": "Academic Project"
+    },
+    {
+      "name": "Line Follower Bot Using Arduino Uno",
+      "detailed_description": [
+        "Designed and built an autonomous line-following robot using IR sensors to detect path boundaries and control directional movement in real time.",
+        "Implemented motor control logic on Arduino Uno to continuously interpret sensor signals and make movement adjustments.",
+        "Used the project to strengthen core embedded systems skills through hands-on robotics and sensor-actuator integration."
+      ],
+      "keywords": ["Arduino Uno", "IR Sensors", "Robotics", "Embedded Systems", "Motor Control", "Automation"],
+      "skills": ["Embedded Programming", "Sensor Interfacing", "Robotics", "Control Systems", "Hardware Prototyping"],
+      "associated_with": "Academic Project"
+    }
+  ]
+}
